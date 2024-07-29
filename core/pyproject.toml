@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "reporter-core"
+version = "0.1.0"
+description = ""
+authors = ["smrh <smrh@duck.com>"]
+readme = "README.md"
+package-mode = false
+packages = [
+    { include = "cmd" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+prisma = "^0.13.1"
+fastapi = "^0.111.1"
+uvicorn = "^0.30.3"
+
+
+pydantic = "^2.8.2"
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+api = "cmd.api:main"

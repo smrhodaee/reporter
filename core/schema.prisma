@@ -1,0 +1,27 @@
+datasource db {
+    provider = "sqlite"
+    url = "file:dev.db"
+}
+
+generator client {
+  provider             = "prisma-client-py"
+  recursive_type_depth = 5
+}
+
+model Log {
+    id          String @id @default(uuid())
+    created_at  DateTime @default(now())
+    updated_at  DateTime @default(now())
+    category    String
+    title       String
+    props       Property[]
+}
+
+model Property {
+  id        String @id @default(uuid())
+  title     String
+  value     String
+  type      String
+  log       Log @relation(fields: [log_id], references: [id], onDelete: Cascade)
+  log_id    String
+}

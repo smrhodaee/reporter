@@ -1,0 +1,193 @@
+
+@font-face {
+  font-family: IranSansWeb;
+  src: url('@/assets/fonts/IRANSansWeb_FaNum.woff2');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: IranSansWeb;
+}
+
+:root {
+  --primary-color:  #386a1f;
+  --on-primary-color: #ffffff;
+  --primary-container-color: #b8f397; 
+  --on-primary-container-color: #072100;
+  --primary-fixed-color:  #b8f397;
+  --primary-fixed-dim-color:  #9dd67d;
+  --on-primary-fixed-color:  #072100;
+  --on-primary-fixed-varient-color:  #205106;
+
+  --secondary-color: #55624c;
+  --on-secondary-color: #ffffff;
+  --secondary-container-color: #d9e7cb;
+  --on-secondary-container-color: #131f0d;
+  --secondary-fixed-color:  #dae8cc;
+  --secondary-fixed-dim-color:  #bdcbb0;
+  --on-secondary-fixed-color:  #121e0c;
+  --on-secondary-fixed-varient-color:  #3e4a35;
+
+  --tertiary-color: #386666;
+  --on-tertiary-color: #ffffff;
+  --tertiary-container-color: #bbebec;
+  --on-tertiary-container-color: #002020;
+  --tertiary-fixed-color:  #bbebec;
+  --tertiary-fixed-dim-color:  #a0cfd0;
+  --on-tertiary-fixed-color:  #002020;
+  --on-tertiary-fixed-varient-color:  #1e4e4e;
+
+  --error-color: #ba1a1a;
+  --error-container-color: #ffdad6;
+  --on-error-color: #ffffff;
+  --on-error-container-color: #410002;
+
+  --surface-dim-color: #d9dbd1;
+  --surface-color: #f8faf0;
+  --surface-bright-color: #f8faf0;
+  --surface-container-lowest-color: #ffffff;
+  --surface-container-low-color: #f3f5eb;
+  --surface-container-color: #edefe5;
+  --surface-container-high-color: #e7e9df;
+  --surface-container-highest-color: #e1e3da;
+  --on-surface-color: #1a1c18;
+  --on-surface-varient-color: #74796d;
+
+  --outline-color: #c3c8bb;
+  --outline-varient-color: #c3c8bb;
+  --scrim-color: #000000;
+  --shadow-color: #000000;
+
+  --inverse-surface-color: #2f312d;
+  --inverse-on-surface-color: #f1f1ea;
+  --inverse-primary-color: #9dd67d;
+
+
+  --success-color: #198754;
+  --success-varient-color: #0f5132;
+  --on-success-color: #FFFFFF;
+
+  --warn-color: #ffc107;
+  --warn-varient-color: #997404;
+  --on-warn-color: #FFFFFF;
+  --border-radios-default: 0.5rem;
+} 
+
+
+body {
+  background-color: var(--surface-color);
+  color: var(--on-surface-color);
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-05 {
+  margin-bottom: 0.5rem;
+}
+
+.me-1 {
+  margin-left: 1rem;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.success-text {
+  color: var(--success-color);
+}
+
+.warn-text {
+  color: var(--warn-color);
+}
+
+.alert {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--on-error-container-color);
+
+  &.alert-error {
+    background-color: var(--error-container-color);
+    color: var(--on-error-container-color);
+  }
+}
+
+
+.btn, .btn-lg {
+  border-radius: var(--border-radios-default);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &.btn-error {
+    background-color: var(--error-color);
+    color: var(--on-error-color);
+  }
+
+  &.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--on-primary-color);
+  }
+
+  &.btn-tertiary {
+    background-color: var(--tertiary-color);
+    color: var(--on-tertiary-color);
+  }
+}
+
+.btn-lg {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+
+.spiner {
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  border-bottom-color: transparent;
+  width: 2rem;
+  height: 2rem;
+  animation: spin 1s linear infinite;
+
+  &.spiner-lg {
+    width: 3rem;
+    height: 3rem;
+    border-width: 5px;
+  }
+
+  &.error {
+    border-color: var(--error-color);
+    border-bottom-color: transparent;
+  }
+}
+
+@keyframes spin {
+    0%{
+      transform: rotate(0);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+}
